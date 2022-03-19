@@ -20,8 +20,8 @@
         <tr>
           <td>{{ item.category }}</td>
           <td>{{ item.title }}</td>
-          <td class="text-end">{{ item.origin_price }}</td>
-          <td class="text-end">{{ item.price }}</td>
+          <td class="text-left">{{ item.origin_price }}</td>
+          <td class="text-left">{{ item.price }}</td>
           <td>
             <span class="text-success" v-if="item.is_enabled">啟用</span>
             <span v-else>未啟用</span>

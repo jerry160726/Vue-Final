@@ -3,28 +3,30 @@
     <table class="table mt-4">
       <thead>
         <tr>
-          <th>購買時間</th>
-          <th>Email</th>
+          <th width="120">購買時間</th>
+          <th width="120">Email</th>
           <th>購買款項</th>
-          <th>應付金額</th>
-          <th>是否付款</th>
-          <th>編輯</th>
+          <th width="120">應付金額</th>
+          <th width="120">是否付款</th>
+          <th width="120">編輯</th>
         </tr>
       </thead>
       <tbody>
         <template v-for="item in orders" :key="item.id">
           <tr v-if="orders.length" :class="{ 'text-secondary': !item.is_paid }">
-            <td>{{ item.create_at }}</td>
+            <!-- <td>{{ item.create_at }}</td> -->
+            <td>{{ $filters.date(item.create_at) }}</td>
             <td><span v-text="item.user.email" v-if="item.user"></span></td>
             <td>
               <ul class="list-unstyled">
                 <li v-for="(product, i) in item.products" :key="i">
-                  {{ product.product.title }} 數量：{{ product.qty }}
+                  {{ product.product.title }}<br>
+                  數量：{{ product.qty }}
                   {{ product.product.unit }}
                 </li>
               </ul>
             </td>
-            <td class="text-right">{{ item.total }}</td>
+            <td class="text-left">{{ item.total }}</td>
             <td>
               <div class="form-check form-switch">
                 <input
@@ -113,10 +115,12 @@ export default {
       // 帶入page這個參數
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders/?page=${page}` // 參數預設值
 
-      this.$http.get(url).then((res) => {
-        this.orders = res.data.orders
-        this.pagination = res.data.pagination
-      })
+      this.$http
+        .get(url)
+        .then((res) => {
+          this.orders = res.data.orders
+          this.pagination = res.data.pagination
+        })
         .catch((err) => {
           console.log(err)
         })

@@ -68,6 +68,7 @@ export default {
         })
         .catch((error) => {
           console.log(error)
+          alert('輸入的帳號密碼有誤')
         })
     }
   }
