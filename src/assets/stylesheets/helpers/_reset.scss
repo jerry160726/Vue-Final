@@ -1,0 +1,24 @@
+a, h1, h2, h3, h4, h5, h6, p, hr, ul,
+.row,
+.col{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+.navbar-brand,
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+.container {
+    padding: 0;
+}
+
+.col-lg-4 {
+    padding: 0;
+}

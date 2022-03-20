@@ -1,3 +1,8 @@
 @import "~bootstrap/scss/functions";
+
 @import "./helpers/variables";
+@import './helpers/reset.scss';
+@import './helpers/btn.scss';
+@import './helpers/card.scss';
+
 @import "~bootstrap/scss/bootstrap";

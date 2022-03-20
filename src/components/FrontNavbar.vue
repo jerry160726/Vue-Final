@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">甜點店</router-link>
+      <router-link class="navbar-brand text-dark" to="/">小安甜點</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,13 +19,13 @@
             <router-link class="nav-link" to="/">首頁</router-link>
           </li> -->
           <li class="nav-item">
-            <router-link class="nav-link" to="/products">產品列表</router-link>
+            <router-link class="nav-link text-dark" to="/products">產品頁面</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/cart">購物車</router-link>
+            <router-link class="nav-link text-dark" to="/cart">購物車</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/login">後台管理</router-link>
+            <router-link class="nav-link text-dark" to="/login">後台管理</router-link>
           </li>
         </ul>
       </div>
