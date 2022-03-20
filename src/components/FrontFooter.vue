@@ -15,7 +15,7 @@
       <div class="container px-0 second-column" data-aos="fade-up">
         <div class="weblink d-flex justify-content-between align-items-center">
           <a href="index.html" class="d-inline-block">
-            <h4 class="text-white mb-2">DOYOGA</h4>
+            <h4 class="text-white mb-2">小安甜點</h4>
           </a>
 
           <ul class="list-unstyled d-flex weblink-icon">
