@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="header navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <router-link class="navbar-brand text-dark" to="/">小安甜點</router-link>
       <button
@@ -15,23 +15,28 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <router-link class="nav-link" to="/">首頁</router-link>
-          </li> -->
           <li class="nav-item">
-            <router-link class="nav-link text-dark" to="/products">產品頁面</router-link>
+            <router-link class="nav-link text-dark" to="/products"
+              >產品頁面</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link text-dark" to="/cart">購物車</router-link>
+            <router-link class="nav-link text-dark" to="/cart"
+              >購物車</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link text-dark" to="/login">後台管理</router-link>
+            <router-link class="nav-link text-dark" to="/login"
+              >後台管理</router-link
+            >
           </li>
         </ul>
       </div>
-      <button type="button" class="btn btn-light">
+      <button type="button" class="btn btn-secondary">
         結帳
-        <span class="badge rounded-pill bg-danger"> {{cartData.carts.length}} </span>
+        <span class="badge rounded-pill bg-danger">
+          {{ cartData.carts.length }}
+        </span>
       </button>
     </div>
   </nav>

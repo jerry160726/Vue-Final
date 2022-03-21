@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import 'bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.scss'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { Field, Form, ErrorMessage, defineRule, configure } from 'vee-validate'

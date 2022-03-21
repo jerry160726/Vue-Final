@@ -64,7 +64,78 @@
       </div>
     </div>
   </div>
+  <section>
+    <div class="choose-case">
+      <div class="container my-3">
+        <h3 class="text-dark text-center mb-1">
+          方案選擇
+        </h3>
+        <p class="text-light text-center mb-4">
+          DOYOGA 可以帶給你...
+        </p>
+        <div class="row">
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+            <div class="card">
+              <div>
+                <img
+                  src="https://github.com/hexschool/webLayoutTraining1st/blob/master/yoga-week8/woman%20in%20white%20tank%20top%20and%20white%20leggings%20bending%20her%20body.jpg?raw=true"
+                  class="card-img-top object-fit-cover"
+                  alt="..."
+                />
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark">首次體驗</h5>
+                <p class="card-text text-light">NT $450 / 次</p>
+                <p class="card-text2 text-dark">
+                  分基礎、中級、高級可以選擇。初次至 DOYOGA 上課建議選擇此方案。
+                </p>
+                <a href="#" class="btn btn-light text-white d-grid">選擇課程</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+            <div class="card">
+              <div>
+                <img
+                  src="https://github.com/hexschool/webLayoutTraining1st/blob/master/yoga-week8/woman%20performing%20yoga.jpg?raw=true"
+                  class="card-img-top object-fit-cover"
+                  alt="..."
+                />
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title text-dark">短期體驗</h5>
+                <p class="card-text text-light">NT $1800 / 月</p>
+                <p class="card-text2 text-dark">
+                  分基礎、中級、高級可以選擇。想試著培養瑜珈習慣者可以選擇此方案。
+                </p>
+                <a href="#" class="btn btn-light text-white d-grid">選擇課程</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+            <div class="card">
+              <div>
+                <img
+                  src="https://github.com/hexschool/webLayoutTraining1st/blob/master/yoga-week8/woman%20in%20blue%20leggings%20and%20black%20tank%20top%20doing%20yoga.jpg?raw=true"
+                  class="card-img-top object-fit-cover"
+                  alt="..."
+                />
+              </div>
+              <div class="card-body text-center" data-aos="fade-left">
+                <h5 class="card-title text-dark">長期體驗</h5>
+                <p class="card-text text-light">NT $5600 / 季</p>
+                <p class="card-text2 text-dark">
+                  分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。
+                </p>
+                <a href="#" class="btn btn-light text-white d-grid">選擇課程</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/home.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/home.scss">
 </style>
