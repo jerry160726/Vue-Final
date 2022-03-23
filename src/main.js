@@ -28,6 +28,7 @@ app.config.globalProperties.$filters = {
   date,
   currency
 }
+
 app.use(router)
 app.use(VueAxios, axios)
 app.component('Form', Form)

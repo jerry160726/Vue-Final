@@ -1,5 +1,5 @@
 <template>
-  <h2>產品列表</h2>
+  <!-- <h2>產品列表</h2> -->
   <div class="container">
     <div class="row row-cols-1 row-cols-lg-4 g-3">
       <div class="col" v-for="product in products" :key="product.id">

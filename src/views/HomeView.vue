@@ -137,5 +137,5 @@
   </section>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/home.scss">
+<style lang="scss" src="../assets/stylesheets/home.scss" scoped>
 </style>
