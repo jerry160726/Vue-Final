@@ -1,32 +1,15 @@
 <template>
   <div class="banner d-flex align-items-center">
-    <div class="container flex-column py-2">
-      <h2 class="title text-light fw-bold">小安甜點，做你生活的好朋友</h2>
-      <p class="slogan text-light mb-3">
-        經過多年的努力，開發出一道道讓人食指大動，味蕾滿足的甜點系列
+    <div class="container flex-column py-3">
+      <h2 class="title text-white fw-bold">小安甜點，您生活的好朋友</h2>
+      <p class="slogan text-white mb-3">
+        經過多年的努力，開發出一道道讓人食指大動，味蕾滿足的甜點系列。
       </p>
       <div class="banner-btn">
-        <button
-          class="
-            reservation-btn
-            btn-primary
-            text-dark
-            btn-sm
-            me-2
-            fs-5
-            px-3
-            py-2
-          "
-          type="button"
-        >
-          立即訂購
-        </button>
-        <button
-          class="intro-btn btn-dark text-white btn-sm fs-5 px-3 py-2"
-          type="button"
-        >
-          餐點介紹
-        </button>
+        <button class="btn btn-outline-danger reservation-btn btn-sm
+        me-2 fs-5 px-3 py-2" type="button">立即訂購</button>
+        <button class="btn btn-outline-secondary intro-btn btn-sm
+        fs-5 px-3 py-2" type="button">甜點目錄</button>
       </div>
     </div>
   </div>

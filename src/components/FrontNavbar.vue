@@ -36,7 +36,7 @@
       </div>
       <div class="d-flex">
         <router-link class="nav-link position-relative px-0 py-0" to="/cart">
-        <i class="bi bi-cart" style="font-size: 1.5rem; color: cornflowerblue"></i>
+        <i class="bi bi-cart-fill cartlogo" style="font-size: 1.5rem;"></i>
           <span class="position-absolute
               translate-middle badge rounded-pill bg-danger cartnum">
               {{ cartData.carts.length }}
