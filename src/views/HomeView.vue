@@ -53,7 +53,7 @@
             <div class="card h-100">
               <div class="card-img-top choco-picture"></div>
               <div class="card-body text-center">
-                <h5 class="card-title text-dark">巧克力</h5>
+                <h5 class="card-title text-dark fw-bold">巧克力</h5>
                 <p class="card-text text-dark mb-1">現在只要 40 元</p>
                 <p class="card-text2 text-dark">
                   濃純巧克力融化在口中的美妙滋味。
@@ -68,7 +68,7 @@
             <div class="card h-100">
               <div class="card-img-top cake-picture"></div>
               <div class="card-body text-center">
-                <h5 class="card-title text-dark">糕點區</h5>
+                <h5 class="card-title text-dark fw-bold">糕點區</h5>
                 <p class="card-text text-dark mb-1">現在只要 75 元</p>
                 <p class="card-text2 text-dark">
                   冰涼再食用，風味更佳。
@@ -83,7 +83,7 @@
             <div class="card h-100">
               <div class="card-img-top candy-picture"></div>
               <div class="card-body text-center">
-                <h5 class="card-title text-dark">糖果區</h5>
+                <h5 class="card-title text-dark fw-bold">糖果區</h5>
                 <p class="card-text text-dark mb-1">現在只要 25 元</p>
                 <p class="card-text2 text-dark">
                   夢幻粉粉甜蜜味，香草療癒感。
