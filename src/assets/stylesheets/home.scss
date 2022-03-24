@@ -1,3 +1,10 @@
+.row {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
 .banner {
     background: url(https://images.unsplash.com/photo-1626803775151-61d756612f97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)
         center center;
@@ -11,10 +18,9 @@
         background-size: cover;
     }
     .container {
-        // border: 1px red solid;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 10px;
-        // margin: 0 auto;
+        padding: 15px;
     }
     .title {
         font-size: 28px;
@@ -28,8 +34,8 @@
     .intro-btn {
         border-radius: 4.8px;
     }
-    .intro-btn:hover{
-        color:white;
+    .intro-btn:hover {
+        color: white;
     }
     /*如果螢幕寬度為 768px 以上*/
     @media (min-width: 768px) {
@@ -40,17 +46,11 @@
 .comfortable-space {
     padding-top: 48px;
     padding-bottom: 48px;
+    background-color: #f2edea;
     .container {
         width: 100%;
         padding-right: 0px;
         padding-left: 0px;
-    }
-    .comfo-intro span {
-        font-size: 16px;
-        line-height: 24px;
-    }
-    .comfo-intro:hover {
-        background: #84c1ff;
     }
     h2 {
         font-size: 28px;
@@ -89,7 +89,7 @@
         border-radius: 16px;
     }
 }
-
+/*如果螢幕寬度為 768px 以上*/
 @media (min-width: 768px) {
     .comfortable-space {
         padding-top: 56px;
@@ -107,7 +107,7 @@
         }
     }
 }
-
+/*如果螢幕寬度為 992px 以上*/
 @media (min-width: 992px) {
     .comfortable-space {
         .comfo-photo .picture1 {
@@ -126,6 +126,7 @@
 .choose-case {
     padding-top: 32px;
     padding-bottom: 48px;
+    // background-color: #f2edea;
     h3 {
         font-size: 28px;
         line-height: 42px;
@@ -137,19 +138,33 @@
     .case-pd-off {
         padding: 0;
     }
-
-    .object-fit-cover {
-        object-fit: cover;
-    }
     .card {
         border: 1px solid #c0a4a5;
+        border-radius: 16px 16px 0 0;
+    }
+    .choco-picture {
+        background: url(https://media.istockphoto.com/photos/dark-chocolate-cake-slice-picture-id1326149453?b=1&k=20&m=1326149453&s=170667a&w=0&h=AgWEe94Ti1abe2LjHTPW07UfNhEjyEgO0Qc3agvXKh4=)
+            center center;
+        background-size: cover;
+    }
+    .cake-picture {
+        background: url(https://images.unsplash.com/photo-1491226907933-45f03868ca1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80)
+            center center;
+        background-size: cover;
+    }
+    .candy-picture {
+        background: url(https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)
+            center center;
+        background-size: cover;
     }
     .card-img-top {
         border-radius: 16px 16px 0 0;
         height: 250px;
+        /*如果螢幕寬度為 768px 以上*/
         @media (min-width: 768px) {
             border-radius: 16px 0 0 16px;
         }
+        /*如果螢幕寬度為 992px 以上*/
         @media (min-width: 992px) {
             border-radius: 16px 16px 0 0;
         }
@@ -159,7 +174,7 @@
         font-size: 16px;
         line-height: 24px;
     }
-
+    /*如果螢幕寬度為 768px 以下*/
     @media (max-width: 768px) {
         .card {
             flex-direction: row !important;
@@ -168,6 +183,7 @@
             width: 50%;
         }
     }
+    /*如果螢幕寬度為 414px 以下*/
     @media (max-width: 414px) {
         .card {
             flex-direction: column !important;

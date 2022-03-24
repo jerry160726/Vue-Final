@@ -18,9 +18,8 @@
             <p class="card-text" style="height: 4.5rem; overflow:hidden">
               {{ product.description }}
             </p>
-            <router-link :to="`/product/${product.id}`" class="btn btn-primary"
-              >產品資料</router-link
-            >
+            <router-link :to="`/product/${product.id}`" class="btn btn-primary">
+            產品資料</router-link>
           </div>
         </div>
       </div>
