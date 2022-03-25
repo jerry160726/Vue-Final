@@ -1,37 +1,31 @@
 <template>
   <div class="footer bg-primary">
-    <div class="container px-0 second-column" data-aos="fade-up">
+    <div class="container px-0">
       <div class="weblink d-flex justify-content-between align-items-center">
-        <router-link class="navbar-brand text-dark" to="/">小安甜點</router-link>
+        <span>Copyright © 2022 AN-DESSERT All Rights Reserved.</span>
         <ul class="list-unstyled d-flex weblink-icon">
           <li>
-            <i class="bi bi-meta pe-3" style="font-size: 1.8rem; color: cornflowerblue;"></i>
+            <router-link class="nav-link px-0 py-0" to="/">
+            <i class="bi bi-meta pe-3" style="font-size: 1.8rem;"></i>
+            </router-link>
           </li>
           <li>
-            <i class="bi bi-line pe-3" style="font-size: 1.8rem; color: cornflowerblue;"></i>
+            <router-link class="nav-link px-0 py-0" to="/">
+            <i class="bi bi-line pe-3" style="font-size: 1.8rem;"></i>
+            </router-link>
           </li>
           <li>
-            <i class="bi bi-envelope pe-3" style="font-size: 1.8rem; color: cornflowerblue;"></i>
+            <router-link class="nav-link px-0 py-0" to="/">
+            <i class="bi bi-envelope pe-3" style="font-size: 1.8rem;"></i>
+            </router-link>
           </li>
           <li>
-            <i class="bi bi-github" style="font-size: 1.8rem; color: cornflowerblue;"></i>
+            <router-link class="nav-link px-0 py-0" to="/">
+            <i class="bi bi-github" style="font-size: 1.8rem;"></i>
+            </router-link>
           </li>
         </ul>
       </div>
-
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li>
-          <router-link class="nav-link text-dark" to="/products">產品頁面</router-link>
-        </li>
-        <li>
-          <router-link class="nav-link text-dark" to="/cart">購物車</router-link>
-        </li>
-        <div class="index-final-link d-md-flex">
-          <li>
-            <router-link class="nav-link text-dark" to="/login">後台管理</router-link>
-          </li>
-        </div>
-      </ul>
     </div>
   </div>
 </template>

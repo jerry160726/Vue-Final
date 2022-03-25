@@ -1,14 +1,21 @@
 .footer {
     background: #ebdbd8;
-    .navbar-brand {
-        font-size: 24px;
-        line-height: 30px;
+    .container {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
-    .first-column {
-        padding: 24px 0;
-    }
-    .second-column {
-        padding-top: 32px;
-        padding-bottom: 32px;
+    .nav-link {
+        .bi-meta,
+        .bi-line,
+        .bi-envelope,
+        .bi-github {
+            color: #cf9e9e;
+        }
+        .bi-meta:hover,
+        .bi-line:hover,
+        .bi-envelope:hover,
+        .bi-github:hover {
+            color: #FFBB77;
+        }
     }
 }
