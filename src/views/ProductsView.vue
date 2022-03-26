@@ -1,6 +1,7 @@
 <template>
   <!-- <h2>產品列表</h2> -->
-  <div class="container">
+  <div class="container py-3">
+    <h3 class="mb-3">首頁/全部商品</h3>
     <div class="row row-cols-1 row-cols-lg-4 g-3">
       <div class="col" v-for="product in products" :key="product.id">
         <div class="card h-100">
@@ -26,6 +27,9 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" src="../assets/stylesheets/productsView.scss" scoped>
+</style>
 
 <script>
 export default {
