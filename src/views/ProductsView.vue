@@ -93,9 +93,23 @@
                   <router-link :to="`/product/${product.id}`"
                   class="info btn btn-outline-success me-2">
                   產品資料</router-link>
-                  <router-link :to="`/product/${product.id}`"
+                  <!-- <router-link :to="`/product/${product.id}`"
                   class="order btn btn-outline-danger">
-                  加到購物車</router-link>
+                  加到購物車</router-link> -->
+                  <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  @click="addToCart(product.id)"
+                  :disabled="isLoadingItem === product.id"
+                >
+                  <!-- 當兩個一致的時候 就不會再執行 -->
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    v-show="isLoadingItem === product.id"
+                  ></span>
+                  <!-- bootstrap也有讀取按鈕 -->
+                  加到購物車
+                </button>
                 </div>
             </div>
           </div>
@@ -109,10 +123,12 @@
 </style>
 
 <script>
+import emitter from '@/libs/emitter.js'
 export default {
   data () {
     return {
-      products: []
+      products: [],
+      isLoadingItem: ''
     }
   },
   methods: {
@@ -124,6 +140,26 @@ export default {
       this.$http(url).then((res) => {
         this.products = res.data.products
       })
+    },
+    addToCart (id, qty = 1) {
+      const data = {
+        product_id: id,
+        qty
+      }
+      this.isLoadingItem = id
+      this.$http
+        .post(
+          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`,
+          { data }
+        )
+        .then((res) => {
+          console.log(res)
+          this.isLoadingItem = ''
+          emitter.emit('get-cart')
+        })
+        .catch((err) => {
+          console.log(err.data)
+        })
     }
   },
   mounted () {
