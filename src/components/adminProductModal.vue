@@ -35,9 +35,8 @@
                 <img :src="product.imageUrl" class="img-fluid" alt="" />
 
                 <div class="mb-3">
-                  <h3>多圖新增</h3>
                   <div v-if="Array.isArray(product.imagesUrl)">
-                    是不是Array
+                    <!-- 多圖新增 看是不是Array -->
                     <!-- 用這段語法判斷時不是陣列 (沒有陣列這個型別!) -->
 
                     <!-- Key為唯一值 加個隨意的 template幫助辨識 -->

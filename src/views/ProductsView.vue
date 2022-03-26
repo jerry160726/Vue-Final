@@ -41,8 +41,6 @@
                       @click="getProducts('糖果')">糖果區</button>
                   </li>
                   <li class="d-grid">
-                    <!-- <router-link to="/cart" class="btn btn-outline-secondary d-grid">
-                      禮盒區</router-link> -->
                       <button class="btn btn-outline-secondary mb-3 d-grid"
                       @click="getProducts('禮盒')">禮盒區</button>
                   </li>
