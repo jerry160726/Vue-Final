@@ -6,39 +6,42 @@
     <div class="row align-items-center">
       <div class="col-md-7">
         <!-- 輪播效果 -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade"
+        data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img :src="product.imageUrl"
                 class="d-block w-100"
-                style="height:500px"/>
+                style="height:450px"/>
             </div>
             <div class="carousel-item" v-for="image in product.imagesUrl" :key="image">
               <img
               :src="image"
                 class="d-block w-100"
-                style="height:500px"/>
+                style="height:450px"/>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
-      <div class="col-md-5" style="border: 1px solid black;">
+      <div class="col-md-5">
         <h2 class="fw-bold h1 mb-1">{{ product.title }}</h2>
-        <div class="priceArea" style="border: 1px solid blue;">
+        <div class="priceArea">
           <p class="mb-0 text-muted text-end origin_price"><del>NT${{ product.origin_price }}</del></p>
           <p class="h4 fw-bold text-end price">NT${{ product.price }}</p>
         </div>
         <div class="row align-items-center">
-          <div class="col-6">
-            <div class="input-group my-3 bg-secondary rounded">
+          <div class="col">
+            <!-- <div class="input-group my-3 bg-secondary rounded">
               <div class="input-group-prepend">
                 <button class="btn btn-outline-dark border-0 py-2"
                   type="button" id="button-addon1">
@@ -56,12 +59,29 @@
                  <i class="bi bi-plus"></i>
                 </button>
               </div>
+            </div> -->
+            <div>
+                <div class="input-group">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    @click="addToCart"
+                  >
+                    加入購物車
+                  </button>
+                </div>
             </div>
           </div>
-          <div class="col-6">
+          <!-- <div class="col-6">
             <router-link to="/cart" class="text-nowrap btn btn-outline-danger w-100 py-2">
                 加到購物車</router-link>
-          </div>
+          </div> -->
         </div>
         <div class="content">
           <h2 class="mb-2">商品說明</h2>
@@ -84,7 +104,9 @@
 export default {
   data () {
     return {
-      product: {}
+      product: {},
+      productId: '',
+      isLoadingItem: '' // 新增讀取效果
     }
   },
   methods: {
@@ -95,6 +117,28 @@ export default {
       ).then((res) => {
         this.product = res.data.product
       })
+    },
+    addToCart (id, qty = 1) {
+      const data = {
+        product_id: id,
+        qty
+      }
+      this.isLoadingItem = id
+      this.$http
+        .post(
+          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`,
+          { data }
+        )
+        .then((res) => {
+          console.log(res)
+          this.getCart()
+          this.$refs.productModal.closeModal()
+          this.isLoadingItem = ''
+          emitter.emit('get-cart')
+        })
+        .catch((err) => {
+          console.log(err.data)
+        })
     }
   },
   mounted () {
