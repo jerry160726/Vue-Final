@@ -1,10 +1,24 @@
-.container{
+.container {
     border: 1px solid blue;
     padding: 12px;
-    .bi-arrow-left{
+    .bi-box-arrow-left {
         color: #cf9e9e;
     }
-    .bi-arrow-left:hover{
-        color:#FFBB77;
+    .bi-box-arrow-left:hover {
+        color: #ffbb77;
+    }
+    .priceArea {
+        vertical-align: baseline;
+        .origin_price {
+            font-size: 18px;
+        }
+        .price {
+            color: red;
+            font-size: 30px;
+        }
+    }
+    .content, .need_know{
+        margin-bottom: 16px;
+        border: 1px solid green;
     }
 }

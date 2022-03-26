@@ -160,6 +160,7 @@
                   type="text"
                   class="form-control"
                   placeholder="請輸入說明內容"
+                  style="height: 350px"
                 >
                 </textarea>
               </div>
@@ -185,12 +186,12 @@
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-outline-secondary"
+            class="btn btn-danger"
             data-bs-dismiss="modal"
           >
             取消
           </button>
-          <button type="button" class="btn btn-primary" @click="updateProduct">
+          <button type="button" class="btn btn-success" @click="updateProduct">
             確認
           </button>
         </div>

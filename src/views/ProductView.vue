@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <router-link to="/products">
-      <i class="bi bi-arrow-left" style="font-size: 2rem;"></i>
+        <i class="bi bi-box-arrow-left" style="font-size: 3rem;"></i>
     </router-link>
     <div class="row align-items-center">
       <div class="col-md-7">
@@ -30,67 +30,50 @@
           </button>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-5" style="border: 1px solid black;">
         <h2 class="fw-bold h1 mb-1">{{ product.title }}</h2>
-        <p class="mb-0 text-muted text-end"><del>NT$1,200</del></p>
-        <p class="h4 fw-bold text-end">NT$1,080</p>
+        <div class="priceArea" style="border: 1px solid blue;">
+          <p class="mb-0 text-muted text-end origin_price"><del>NT${{ product.origin_price }}</del></p>
+          <p class="h4 fw-bold text-end price">NT${{ product.price }}</p>
+        </div>
         <div class="row align-items-center">
           <div class="col-6">
-            <div class="input-group my-3 bg-light rounded">
+            <div class="input-group my-3 bg-secondary rounded">
               <div class="input-group-prepend">
-                <button
-                  class="btn btn-outline-dark border-0 py-2"
-                  type="button"
-                  id="button-addon1"
-                >
-                  <i class="fas fa-minus"></i>
+                <button class="btn btn-outline-dark border-0 py-2"
+                  type="button" id="button-addon1">
+                  <i class="bi bi-dash"></i>
                 </button>
               </div>
-              <input
-                type="text"
-                class="
-                  form-control
-                  border-0
-                  text-center
-                  my-auto
-                  shadow-none
-                  bg-light
-                "
+              <input type="text" class="form-control border-0
+                  text-center my-auto shadow-none bg-primary"
                 placeholder=""
                 aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
-                value="1"
-              />
+                aria-describedby="button-addon1" value="1"/>
               <div class="input-group-append">
-                <button
-                  class="btn btn-outline-dark border-0 py-2"
-                  type="button"
-                  id="button-addon2"
-                >
-                  <i class="fas fa-plus"></i>
+                <button class="btn btn-outline-dark border-0 py-2"
+                  type="button" id="button-addon2">
+                 <i class="bi bi-plus"></i>
                 </button>
               </div>
             </div>
           </div>
           <div class="col-6">
-            <a
-              href="./checkout.html"
-              class="text-nowrap btn btn-dark w-100 py-2"
-              >Lorem ipsum</a
-            >
+            <router-link to="/cart" class="text-nowrap btn btn-outline-danger w-100 py-2">
+                加到購物車</router-link>
           </div>
+        </div>
+        <div class="content">
+          <h2 class="mb-2">商品說明</h2>
+          <p>{{ product.content }}</p>
+        </div>
+        <div class="need_know">
+          <h2 class="mb-2">購物須知</h2>
+          <p>每次購物滿 3,000 元以上免運費，未達 3,000 元，需加付 230 元運費，訂單完成後，將在 1 ~ 3 個工作天內出貨。</p>
         </div>
       </div>
     </div>
-    <div class="row my-5">
-        <div class="col-md-4">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
-        </div>
-        <div class="col-md-3">
-          <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-        </div>
-      </div>
-      <h3 class="fw-bold">Lorem ipsum dolor sit amet</h3>
+      <h3 class="fw-bold py-3">你可能感興趣的其他甜點</h3>
   </div>
 </template>
 
