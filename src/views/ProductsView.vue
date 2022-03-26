@@ -1,26 +1,103 @@
 <template>
-  <!-- <h2>產品列表</h2> -->
-  <div class="container py-3">
-    <h3 class="mb-3">首頁/全部商品</h3>
-    <div class="row row-cols-1 row-cols-lg-4 g-3">
-      <div class="col" v-for="product in products" :key="product.id">
-        <div class="card h-100">
-          <!-- <img :src="product.imageUrl" class="card-img-top" :alt="product.title"> -->
-          <div
-            :style="{ backgroundImage: `url(${product.imageUrl})` }"
-            style="
-              height: 200px;
-              background-size: cover;
-              background-position: center center;
-            "
-          ></div>
-          <div class="card-body">
-            <h5 class="card-title">{{ product.title }}</h5>
-            <p class="card-text" style="height: 4.5rem; overflow:hidden">
-              {{ product.description }}
-            </p>
-            <router-link :to="`/product/${product.id}`" class="btn btn-primary">
-            產品資料</router-link>
+   <div class="banner d-flex align-items-center">
+    <div class="container flex-column py-3">
+      <h2 class="title text-white fw-bold text-center">產品頁面</h2>
+    </div>
+  </div>
+  <div class="container mt-md-5 mt-3 mb-7">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="accordion border border-bottom border-top-0 border-start-0 border-end-0 mb-3"
+          id="accordionExample">
+          <div class="card border-0">
+            <div class="card-header px-0 py-3 bg-white
+                border border-bottom-0 border-top border-start-0 border-end-0
+                rounded-0" id="headingOne"
+              data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              <div class="d-flex justify-content-between align-items-center pe-1">
+                <h4 class="mb-0 fw-bold ps-3">商品分類<i class="bi bi-caret-down"></i></h4>
+              </div>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="card-body py-0">
+                <ul class="list-unstyled">
+                  <li class="d-grid">
+                      <!-- <router-link to="/cart" class="btn btn-outline-secondary
+                      mb-2 d-grid">
+                      巧克力區</router-link> -->
+                      <button class="btn btn-outline-secondary mb-2"
+                      @click="getProducts()">全部商品</button>
+                  </li>
+                  <li class="d-grid">
+                      <button class="btn btn-outline-secondary mb-2"
+                      @click="getProducts('巧克力')">巧克力區</button>
+                  </li>
+                  <li class="d-grid">
+                      <button class="btn btn-outline-secondary mb-2"
+                      @click="getProducts('糕點')">糕點區</button>
+                  </li>
+                  <li class="d-grid">
+                      <button class="btn btn-outline-secondary mb-2"
+                      @click="getProducts('糖果')">糖果區</button>
+                  </li>
+                  <li class="d-grid">
+                    <!-- <router-link to="/cart" class="btn btn-outline-secondary d-grid">
+                      禮盒區</router-link> -->
+                      <button class="btn btn-outline-secondary mb-3 d-grid"
+                      @click="getProducts('禮盒')">禮盒區</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row row-cols-1 row-cols-lg-3 g-3">
+          <div class="product col-md-6" v-for="product in products" :key="product.id">
+            <!-- <div class="card border-0 mb-4 position-relative position-relative">
+              <img
+                :src="product.imageUrl"
+                class="card-img-top rounded-0"
+                alt="..."
+              />
+              <a href="#" class="text-dark">
+                <i class="bi bi-heart position-absolute" style="right: 16px; top: 16px"></i>
+              </a>
+              <div class="card-body p-0">
+                <h4 class="mb-0 mt-3">
+                  <a href="./detail.html" class="text-dark">{{ product.title }}</a>
+                </h4>
+                <p class="card-text mb-0">
+                  NT${{ product.price }}
+                  <span class="text-muted"><del>NT${{ product.origin_price }}</del></span>
+                </p>
+                <p class="text-muted mt-3"></p>
+              </div>
+            </div> -->
+              <div class="card h-100">
+                <div :style="{ backgroundImage: `url(${product.imageUrl})` }"
+                      style="height: 200px;background-size: cover;
+                            background-position: center center;"
+                      class="card-img-top"></div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.title }}</h5>
+                  <p class="card-text" style="height: 3rem; overflow:hidden">
+                    {{ product.description }}
+                  </p>
+                  <div class="priceArea py-2 d-flex">
+                   <span class="text-muted"><del>NT${{ product.origin_price }}</del></span>&nbsp;&nbsp;
+                    <p class="card-text price">
+                    NT${{ product.price }}</p>
+                  </div>
+                  <router-link :to="`/product/${product.id}`"
+                  class="info btn btn-outline-success me-2">
+                  產品資料</router-link>
+                  <router-link :to="`/product/${product.id}`"
+                  class="order btn btn-outline-danger">
+                  加到購物車</router-link>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -39,10 +116,12 @@ export default {
     }
   },
   methods: {
-    getProducts () {
-      this.$http(
-        `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
-      ).then((res) => {
+    getProducts (category) {
+      let url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
+      if (category) {
+        url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products?category=${category}`
+      }
+      this.$http(url).then((res) => {
         this.products = res.data.products
       })
     }
