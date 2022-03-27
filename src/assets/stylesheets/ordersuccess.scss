@@ -1,0 +1,40 @@
+.container{
+    border: 1px solid blue;
+    .banner {
+        background: url(https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFwcHl8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)
+            center center;
+        background-size: cover;
+        height: 560px;
+        width: 100%;
+        /*如果螢幕寬度為 992px 以上*/
+        @media (min-width: 992px) {
+            background: url(https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFwcHl8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)
+                center center;
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .title {
+            font-size: 28px;
+            line-height: 42px;
+        }
+        .slogan {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .reservation-btn,
+        .intro-btn {
+            border-radius: 4.8px;
+        }
+        .intro-btn:hover {
+            color: white;
+        }
+        /*如果螢幕寬度為 768px 以上*/
+        @media (min-width: 768px) {
+            height: 585px;
+        }
+    }
+}

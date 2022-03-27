@@ -1,100 +1,27 @@
 <template>
   <div class="container py-5">
-    <h2 class="text-center mb-3">訂單資訊</h2>
-    <div class="my-5 row justify-content-center">
-        <v-form
-          ref="form"
-          class="col-md-6"
-          v-slot="{ errors }"
-          @submit="createOrder"
-        >
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <v-field
-              id="email"
-              name="email"
-              type="email"
-              class="form-control"
-              v-model="form.user.email"
-              :class="{ 'is-invalid': errors['email'] }"
-              placeholder="請輸入 Email"
-              rules="email|required"
-            ></v-field>
-            <error-message
-              name="email"
-              class="invalid-feedback"
-            ></error-message>
-          </div>
-
-          <div class="mb-3">
-            <label for="name" class="form-label">收件人姓名</label>
-            <v-field
-              id="name"
-              name="姓名"
-              type="text"
-              class="form-control"
-              :class="{ 'is-invalid': errors['姓名'] }"
-              placeholder="請輸入姓名"
-              rules="required"
-              v-model="form.user.name"
-            ></v-field>
-            <error-message name="姓名" class="invalid-feedback"></error-message>
-          </div>
-
-          <div class="mb-3">
-            <label for="tel" class="form-label">收件人電話</label>
-            <v-field
-              id="tel"
-              name="電話"
-              type="text"
-              class="form-control"
-              :class="{ 'is-invalid': errors['電話'] }"
-              placeholder="請輸入電話"
-              rules="required"
-              v-model="form.user.tel"
-            ></v-field>
-            <error-message name="電話" class="invalid-feedback"></error-message>
-          </div>
-
-          <div class="mb-3">
-            <label for="address" class="form-label">收件人地址</label>
-            <v-field
-              id="address"
-              name="地址"
-              type="text"
-              class="form-control"
-              :class="{ 'is-invalid': errors['地址'] }"
-              placeholder="請輸入地址"
-              rules="required"
-              v-model="form.user.address"
-            ></v-field>
-            <error-message name="地址" class="invalid-feedback"></error-message>
-          </div>
-
-          <div class="mb-3">
-            <label for="message" class="form-label">留言</label>
-            <textarea
-              id="message"
-              class="form-control"
-              cols="30"
-              rows="10"
-              v-model="form.message"
-            ></textarea>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-danger">送出訂單</button>
-          </div>
-        </v-form>
+    <div class="banner d-flex align-items-center">
+      <div class="container flex-column py-3 text-center">
+        <h2 class="title text-white fw-bold">訂單完成</h2>
+        <p class="slogan text-white mb-3">
+        感謝您的購買！<br>
+        您的訂單， 將在 1 ~ 3 個工作天內出貨！
+        </p>
+        <div class="banner-btn">
+          <router-link to="/products"
+          class="btn btn-outline-danger reservation-btn btn-sm me-2 fs-5 px-3 py-2">
+              繼續選購</router-link>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/orderconfirm.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/ordersuccess.scss" scoped>
 </style>
 
 <script>
 import emitter from '@/libs/emitter.js'
-import { Field, Form, ErrorMessage } from 'vee-validate'
 
 export default {
   data () {
@@ -116,11 +43,6 @@ export default {
       productId: '',
       isLoadingItem: '' // 新增讀取效果
     }
-  },
-  components: {
-    VForm: Form,
-    VField: Field,
-    ErrorMessage
   },
   methods: {
     getProducts () {
@@ -219,7 +141,6 @@ export default {
           this.$refs.form.resetForm()
           this.form.message = ''
           this.getCart()
-          this.$router.push('/success')
         })
         .catch((err) => {
           alert(err.data.message)

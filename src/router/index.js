@@ -38,6 +38,10 @@ const routes = [
     {
       path: 'confirm',
       component: () => import('../views/OrderConfirmView.vue')
+    },
+    {
+      path: 'success',
+      component: () => import('../views/OrderSuccessView.vue')
     }]
   },
   {
