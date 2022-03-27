@@ -15,7 +15,7 @@
             立即訂購</router-link>
         <router-link to="/cart"
         class="btn btn-outline-secondary intro-btn btn-sm fs-5 px-3 py-2">
-            甜點目錄</router-link>
+            查看購物車</router-link>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
                   濃純巧克力融化在口中的美妙滋味。
                 </p>
                 <!-- <a href="#" class="btn btn-secondary text-white d-grid">相關甜點</a> -->
-                <router-link to="/products" class="btn btn-secondary text-white d-grid">
+                <router-link to="/products" class="btn btn-outline-secondary d-grid">
                 相關甜點</router-link>
               </div>
             </div>
@@ -74,7 +74,7 @@
                   冰涼再食用，風味更佳。
                 </p>
                 <!-- <a href="#" class="btn btn-secondary text-white d-grid">相關甜點</a> -->
-                <router-link to="/products" class="btn btn-secondary text-white d-grid">
+                <router-link to="/products" class="btn btn-outline-secondary d-grid">
                 相關甜點</router-link>
               </div>
             </div>
@@ -89,7 +89,7 @@
                   夢幻粉粉甜蜜味，香草療癒感。
                 </p>
                 <!-- <a href="#" class="btn btn-secondary text-white d-grid">相關甜點</a> -->
-                <router-link to="/products" class="btn btn-secondary text-white d-grid">
+                <router-link to="/products" class="btn btn-outline-secondary d-grid">
                 相關甜點</router-link>
               </div>
             </div>

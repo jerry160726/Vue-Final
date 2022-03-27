@@ -1,5 +1,5 @@
 <template>
-  <nav class="header navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="header navbar navbar-expand-lg navbar-dark bg-primary sticky-top box-shadow">
     <div class="container">
       <router-link class="navbar-brand text-dark fw-bold" to="/"
         >小安甜點</router-link

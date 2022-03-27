@@ -1,102 +1,100 @@
 <template>
   <div class="container py-5">
-    <h2 class="text-center mb-3">購物車內容</h2>
-    <div>
-      <table class="table align-middle">
-        <thead>
-          <tr>
-            <th class="text-center">刪除</th>
-            <th class="text-center" style="width: 150px">圖片</th>
-            <th class="text-center">品名</th>
-            <th class="text-start" style="width: 150px">數量/單位</th>
-            <th class="text-center">單價</th>
-          </tr>
-        </thead>
-        <tbody>
-          <template v-if="cartData.carts">
-            <tr v-for="item in cartData.carts" :key="item.id">
-              <td class="text-center">
-                <button
-                  type="button"
-                  class="btn btn-outline-danger btn-sm text-center"
-                  @click="removeCartItem(item.id)"
-                >
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-              <td class="text-center">
-                <div
-                  :style="{ backgroundImage: `url(${item.product.imageUrl})` }"
-                  style="
-                    height: 100px;
-                    width: 100px;
-                    background-size: cover;
-                    background-position: center;
-                  "
-                ></div>
-              </td>
-              <td class="text-center">
-                {{ item.product.title }}
-              </td>
-              <td class="text-start">
-                <div class="input-group input-group-sm">
-                  <div class="input-group mb-3">
-                    <select
-                      id=""
-                      class="form-select"
-                      v-model="item.qty"
-                      @change="updateCart(item)"
-                      :disabled="isLoadingItem === item.id"
-                    >
-                      <option
-                        :value="num"
-                        v-for="num in 300"
-                        :key="`${num}-${item.id}`"
-                      >
-                        {{ num }}
-                      </option>
-                    </select>
+    <h2 class="text-center mb-3">訂單資訊</h2>
+    <div class="my-5 row justify-content-center">
+        <v-form
+          ref="form"
+          class="col-md-6"
+          v-slot="{ errors }"
+          @submit="createOrder"
+        >
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <v-field
+              id="email"
+              name="email"
+              type="email"
+              class="form-control"
+              v-model="form.user.email"
+              :class="{ 'is-invalid': errors['email'] }"
+              placeholder="請輸入 Email"
+              rules="email|required"
+            ></v-field>
+            <error-message
+              name="email"
+              class="invalid-feedback"
+            ></error-message>
+          </div>
 
-                    <span class="input-group-text" id="basic-addon2">{{
-                      item.product.unit
-                    }}</span>
-                  </div>
-                </div>
-              </td>
-              <td class="text-center">
-                {{ item.total }}
-              </td>
-            </tr>
-          </template>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4" class="text-end">總計</td>
-            <td class="text-center">{{ cartData.total }}</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-    <div class="order-column d-flex justify-content-evenly">
-      <button
-        class="btn btn-outline-warning btn-sm fs-5 px-3 py-2"
-        type="button"
-        @click="removeCartItems"
-        :disabled="cartData.carts.length === 0"
-      >
-        清空購物車
-      </button>
-      <router-link to="/confirm"
-      class="btn btn-outline-danger btn-sm fs-5 px-3 py-2">確定訂單</router-link>
-    </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">收件人姓名</label>
+            <v-field
+              id="name"
+              name="姓名"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors['姓名'] }"
+              placeholder="請輸入姓名"
+              rules="required"
+              v-model="form.user.name"
+            ></v-field>
+            <error-message name="姓名" class="invalid-feedback"></error-message>
+          </div>
+
+          <div class="mb-3">
+            <label for="tel" class="form-label">收件人電話</label>
+            <v-field
+              id="tel"
+              name="電話"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors['電話'] }"
+              placeholder="請輸入電話"
+              rules="required"
+              v-model="form.user.tel"
+            ></v-field>
+            <error-message name="電話" class="invalid-feedback"></error-message>
+          </div>
+
+          <div class="mb-3">
+            <label for="address" class="form-label">收件人地址</label>
+            <v-field
+              id="address"
+              name="地址"
+              type="text"
+              class="form-control"
+              :class="{ 'is-invalid': errors['地址'] }"
+              placeholder="請輸入地址"
+              rules="required"
+              v-model="form.user.address"
+            ></v-field>
+            <error-message name="地址" class="invalid-feedback"></error-message>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">留言</label>
+            <textarea
+              id="message"
+              class="form-control"
+              cols="30"
+              rows="10"
+              v-model="form.message"
+            ></textarea>
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-danger">送出訂單</button>
+          </div>
+        </v-form>
+      </div>
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/cartview.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/orderconfirm.scss" scoped>
 </style>
 
 <script>
 import emitter from '@/libs/emitter.js'
+import { Field, Form, ErrorMessage } from 'vee-validate'
 
 export default {
   data () {
@@ -118,6 +116,11 @@ export default {
       productId: '',
       isLoadingItem: '' // 新增讀取效果
     }
+  },
+  components: {
+    VForm: Form,
+    VField: Field,
+    ErrorMessage
   },
   methods: {
     getProducts () {
