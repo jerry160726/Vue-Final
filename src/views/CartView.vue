@@ -332,6 +332,7 @@ export default {
         .then((res) => {
           this.getCart()
           this.isLoadingItem = ''
+          emitter.emit('get-cart')
         })
     },
     removeCartItems () {
@@ -341,6 +342,7 @@ export default {
         )
         .then(() => {
           this.getCart()
+          emitter.emit('get-cart')
         })
         .catch((err) => {
           console.log(err.data)
@@ -361,6 +363,7 @@ export default {
           console.log(res.data)
           this.getCart()
           this.isLoadingItem = ''
+          emitter.emit('get-cart')
         })
     },
     createOrder () {

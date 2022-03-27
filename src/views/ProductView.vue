@@ -111,6 +111,7 @@
 </style>
 
 <script>
+import emitter from '@/libs/emitter'
 import Loading from 'vue-loading-overlay'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
@@ -175,6 +176,7 @@ export default {
         .then((res) => {
           console.log(res.data.message)
           this.isLoading = false
+          emitter.emit('get-cart')
         })
         .catch((err) => {
           console.log(err)
