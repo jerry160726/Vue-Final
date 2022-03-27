@@ -3,6 +3,8 @@ import 'bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.scss'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLoading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 import { Field, Form, ErrorMessage, defineRule, configure } from 'vee-validate'
 // 匯入規則
 import AllRules from '@vee-validate/rules'
@@ -31,6 +33,7 @@ app.config.globalProperties.$filters = {
 
 app.use(router)
 app.use(VueAxios, axios)
+app.use(VueLoading)
 app.component('Form', Form)
 app.component('Field', Field)
 app.component('ErrorMessage', ErrorMessage)

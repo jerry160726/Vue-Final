@@ -128,7 +128,7 @@
                     >
                       <option
                         :value="num"
-                        v-for="num in 20"
+                        v-for="num in 300"
                         :key="`${num}-${item.id}`"
                       >
                         {{ num }}
@@ -284,7 +284,7 @@ export default {
     getProducts () {
       this.$http
         .get(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products/all`
+          `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
         )
         .then((res) => {
           this.products = res.data.products
@@ -296,7 +296,7 @@ export default {
     },
     getCart () {
       this.$http
-        .get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
+        .get(`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
           this.cartData = res.data.data
         })
@@ -309,11 +309,11 @@ export default {
       this.isLoadingItem = id
       this.$http
         .post(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`,
+          `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`,
           { data }
         )
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
           this.getCart()
           this.$refs.productModal.closeModal()
           this.isLoadingItem = ''
@@ -327,7 +327,7 @@ export default {
       this.isLoadingItem = id
       this.$http
         .delete(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${id}`
+          `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
         )
         .then((res) => {
           this.getCart()
@@ -337,13 +337,13 @@ export default {
     removeCartItems () {
       this.$http
         .delete(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`
+          `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`
         )
         .then(() => {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err)
+          console.log(err.data)
         })
     },
     updateCart (item) {
@@ -354,17 +354,17 @@ export default {
       this.isLoadingItem = item.id
       this.$http
         .put(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${item.id}`,
+          `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`,
           { data }
         )
         .then((res) => {
-          console.log(res)
+          console.log(res.data)
           this.getCart()
           this.isLoadingItem = ''
         })
     },
     createOrder () {
-      const url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order`
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
       const order = this.form
       this.$http
         .post(url, { data: order })

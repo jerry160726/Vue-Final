@@ -1,10 +1,10 @@
 .container {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     padding: 12px;
-    .bi-box-arrow-left {
+    .bi-arrow-bar-left {
         color: #cf9e9e;
     }
-    .bi-box-arrow-left:hover {
+    .bi-arrow-bar-left:hover {
         color: #ffbb77;
     }
     .priceArea {
@@ -17,8 +17,36 @@
             font-size: 30px;
         }
     }
-    .content, .need_know{
+
+    .content,
+    .need_know {
         margin-bottom: 16px;
-        border: 1px solid green;
+        // border: 1px solid green;
+    }
+    // p-card
+    .p-card {
+        overflow: hidden;
+        &-image {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        &:hover {
+            .hover-area {
+                opacity: 1;
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .hover-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
     }
 }
