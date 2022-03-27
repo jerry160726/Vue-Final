@@ -82,7 +82,7 @@
             ></textarea>
           </div>
           <div class="text-end">
-            <button type="submit" class="btn btn-danger">送出訂單</button>
+            <button type="submit" class="btn btn-outline-danger">送出訂單</button>
           </div>
         </v-form>
       </div>
