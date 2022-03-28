@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center">
-      <h1 class="h3 mb-3 font-weight-normal">請先登入</h1>
-      <div class="col-8">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-8 login_block">
+        <h1 class="h3 text-center text-white">管理者登入</h1>
         <form class="form-signin">
           <div class="form-floating mb-3">
             <input
@@ -28,12 +28,9 @@
             <label for="password">Password</label>
           </div>
           <button
-            class="btn btn-lg btn-primary w-100 mt-3"
+            class="btn btn-lg btn-outline-primary w-100"
             type="button"
-            @click="login"
-          >
-            登入
-          </button>
+            @click="login">登入</button>
         </form>
       </div>
     </div>

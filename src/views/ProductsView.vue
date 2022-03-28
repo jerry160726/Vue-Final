@@ -22,9 +22,6 @@
               <div class="card-body py-0">
                 <ul class="list-unstyled">
                   <li class="d-grid">
-                      <!-- <router-link to="/cart" class="btn btn-outline-secondary
-                      mb-2 d-grid">
-                      巧克力區</router-link> -->
                       <button class="btn btn-outline-secondary mb-2"
                       @click="getProducts()">全部商品</button>
                   </li>
@@ -53,26 +50,6 @@
       <div class="col-md-8">
         <div class="row row-cols-1 row-cols-lg-3 g-3">
           <div class="product col-md-6" v-for="product in products" :key="product.id">
-            <!-- <div class="card border-0 mb-4 position-relative position-relative">
-              <img
-                :src="product.imageUrl"
-                class="card-img-top rounded-0"
-                alt="..."
-              />
-              <a href="#" class="text-dark">
-                <i class="bi bi-heart position-absolute" style="right: 16px; top: 16px"></i>
-              </a>
-              <div class="card-body p-0">
-                <h4 class="mb-0 mt-3">
-                  <a href="./detail.html" class="text-dark">{{ product.title }}</a>
-                </h4>
-                <p class="card-text mb-0">
-                  NT${{ product.price }}
-                  <span class="text-muted"><del>NT${{ product.origin_price }}</del></span>
-                </p>
-                <p class="text-muted mt-3"></p>
-              </div>
-            </div> -->
               <div class="card h-100">
                 <div :style="{ backgroundImage: `url(${product.imageUrl})` }"
                       style="height: 200px;background-size: cover;

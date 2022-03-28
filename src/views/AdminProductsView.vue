@@ -62,6 +62,9 @@
   ></del-product-modal>
 </template>
 
+<style lang="scss" src="../assets/stylesheets/adminproductsview.scss" scoped>
+</style>
+
 <script>
 import pagination from '@/components/Pagination.vue'
 import productModal from '@/components/AdminProductModal'
