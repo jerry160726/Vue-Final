@@ -51,10 +51,15 @@
         <div class="row row-cols-1 row-cols-lg-3 g-3">
           <div class="product col-md-6" v-for="product in products" :key="product.id">
               <div class="card h-100">
+                <router-link :to="`/product/${product.id}`" style="overflow: hidden;">
                 <div :style="{ backgroundImage: `url(${product.imageUrl})` }"
-                      style="height: 200px;background-size: cover;
-                            background-position: center center;"
+                      style="height: 200px;
+                            background-size: cover;
+                            background-position: center center;
+                            transition: all 1s ease 0s;
+                            "
                       class="card-img-top"></div>
+                </router-link>
                 <div class="card-body">
                   <h5 class="card-title">{{ product.title }}</h5>
                   <p class="card-text" style="height: 3rem; overflow:hidden">

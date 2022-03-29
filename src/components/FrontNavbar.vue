@@ -42,15 +42,6 @@
               {{ cartData.carts.length }}
             <span class="visually-hidden">unread messages</span></span></router-link>
       </div>
-      <!-- <span class="badge rounded-pill bg-danger">
-          {{ cartData.carts.length }}
-        </span> -->
-      <!-- <button type="button" class="btn btn-secondary">
-        結帳
-        <span class="badge rounded-pill bg-danger">
-          {{ cartData.carts.length }}
-        </span>
-      </button> -->
     </div>
   </nav>
 </template>
