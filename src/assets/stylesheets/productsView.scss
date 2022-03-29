@@ -42,6 +42,9 @@
         border-radius: 16px 16px 0 0;
         overflow: hidden;
     }
+    .card:hover{
+        box-shadow: 3px 3px 5px #9D9D9D;
+    }
     .card-img-top {
         border-radius: 16px 16px 0 0; 
     }

@@ -141,6 +141,13 @@
     .card {
         border: 1px solid #c0a4a5;
         border-radius: 16px 16px 0 0;
+        overflow: hidden;
+    }
+    .card:hover{
+        box-shadow: 3px 3px 5px #9D9D9D;
+    }
+    .btn-outline-secondary:hover{
+        color: white;
     }
     .choco-picture {
         background: url(https://media.istockphoto.com/photos/dark-chocolate-cake-slice-picture-id1326149453?b=1&k=20&m=1326149453&s=170667a&w=0&h=AgWEe94Ti1abe2LjHTPW07UfNhEjyEgO0Qc3agvXKh4=)

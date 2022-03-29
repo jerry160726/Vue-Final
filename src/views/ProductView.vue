@@ -2,7 +2,7 @@
   <Loading :active="isLoading"></Loading>
   <div class="container">
     <router-link to="/products">
-        <i class="bi bi-arrow-bar-left" style="font-size: 3rem;"></i>
+        <i class="bi bi-arrow-left" style="font-size: 3rem;"></i>
     </router-link>
     <div class="row align-items-center">
       <div class="col-md-7">
