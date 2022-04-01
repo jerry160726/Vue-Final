@@ -186,12 +186,12 @@
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-danger"
+            class="btn btn-outline-danger"
             data-bs-dismiss="modal"
           >
             取消
           </button>
-          <button type="button" class="btn btn-success" @click="updateProduct">
+          <button type="button" class="btn btn-outline-success" @click="updateProduct">
             確認
           </button>
         </div>

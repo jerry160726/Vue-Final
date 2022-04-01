@@ -1,0 +1,11 @@
+.container{
+    // border: 1px solid #000;
+    padding: 10px;
+    .is_paid{
+        color: green;
+        font-weight:bold;
+    }
+    .non_paid{
+        color: red;
+    }
+}

@@ -9,7 +9,7 @@
   >
     <div class="modal-dialog">
       <div class="modal-content border-0">
-        <div class="modal-header bg-danger text-white">
+        <div class="modal-header text-white">
           <h5 id="delOrderModalLabel" class="modal-title">
             <span>刪除訂單</span>
           </h5>
@@ -21,18 +21,17 @@
           ></button>
         </div>
         <div class="modal-body">
-          <strong class="text-danger"> 是否刪除此筆訂單(刪除後將無法恢復)。</strong>
-          <!-- <strong class="text-danger">此筆訂單</strong> -->
+          <strong>是否刪除此筆訂單(刪除後將無法恢復)。</strong>
         </div>
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-outline-secondary"
+            class="btn btn-outline-secondary cancel_btn"
             data-bs-dismiss="modal"
           >
             取消
           </button>
-          <button type="button" class="btn btn-danger" @click="delProduct">
+          <button type="button" class="btn btn-outline-danger del_btn" @click="delProduct">
             確認刪除
           </button>
         </div>
@@ -40,6 +39,19 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.modal-header {
+  background-color: red;
+}
+.cancel_btn:hover {
+  color: white;
+}
+.del_btn:hover {
+  background-color: red;
+  color: white;
+}
+</style>
 
 <script>
 import Modal from 'bootstrap/js/dist/modal'

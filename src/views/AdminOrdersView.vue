@@ -20,7 +20,7 @@
             <td>
               <ul class="list-unstyled">
                 <li v-for="(product, i) in item.products" :key="i">
-                  {{ product.product.title }}<br>
+                  {{ product.product.title }}<br />
                   數量：{{ product.qty }}
                   {{ product.product.unit }}
                 </li>
@@ -37,15 +37,15 @@
                   @change="updatePaid(item)"
                 />
                 <label class="form-check-label" :for="`paidSwitch${item.id}`">
-                  <span v-if="item.is_paid">已付款</span>
-                  <span v-else>未付款</span>
+                  <span v-if="item.is_paid" class="is_paid">已付款</span>
+                  <span v-else class="non_paid">未付款</span>
                 </label>
               </div>
             </td>
             <td>
               <div class="btn-group">
                 <button
-                  class="btn btn-outline-primary btn-sm"
+                  class="btn btn-outline-success btn-sm"
                   type="button"
                   @click="openModal(item)"
                 >
@@ -77,6 +77,9 @@
     ref="delOrderModal"
   ></del-order-modal>
 </template>
+
+<style lang="scss" src="../assets/stylesheets/pages/adminordersview.scss" scoped>
+</style>
 
 <script>
 import pagination from '@/components/OrderPagination.vue'

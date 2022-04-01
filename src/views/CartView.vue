@@ -92,7 +92,7 @@
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/cartview.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/cartview.scss" scoped>
 </style>
 
 <script>

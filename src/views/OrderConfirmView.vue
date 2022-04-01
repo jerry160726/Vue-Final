@@ -89,7 +89,7 @@
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/orderconfirm.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/orderconfirm.scss" scoped>
 </style>
 
 <script>

@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/ordersuccess.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/ordersuccess.scss" scoped>
 </style>
 
 <script>

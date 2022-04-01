@@ -5,24 +5,12 @@
         <span>Copyright © 2022 AN-DESSERT All Rights Reserved.</span>
         <ul class="list-unstyled d-flex weblink-icon">
           <li>
-            <router-link class="nav-link px-0 py-0" to="/">
-            <i class="bi bi-meta pe-3" style="font-size: 1.8rem;"></i>
-            </router-link>
+            <a href="mailto:jerry160726@gmail.com" class="nav-link ps-2">
+              <i class="bi bi-envelope pe-3" style="font-size: 1.8rem;"></i></a>
           </li>
           <li>
-            <router-link class="nav-link px-0 py-0" to="/">
-            <i class="bi bi-line pe-3" style="font-size: 1.8rem;"></i>
-            </router-link>
-          </li>
-          <li>
-            <router-link class="nav-link px-0 py-0" to="/">
-            <i class="bi bi-envelope pe-3" style="font-size: 1.8rem;"></i>
-            </router-link>
-          </li>
-          <li>
-            <router-link class="nav-link px-0 py-0" to="/">
-            <i class="bi bi-github" style="font-size: 1.8rem;"></i>
-            </router-link>
+             <a href="https://github.com/jerry160726" class="nav-link">
+              <i class="bi bi-github" style="font-size: 1.8rem;"></i></a>
           </li>
         </ul>
       </div>

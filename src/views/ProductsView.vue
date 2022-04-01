@@ -99,7 +99,7 @@
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/productsView.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/productsView.scss" scoped>
 </style>
 
 <script>

@@ -1,18 +1,23 @@
 .footer {
     background: #ebdbd8;
+    a{
+        padding: 0;
+    }
+    span{
+        font-size: 16px;
+        @media (max-width: 540px) {
+            font-size: 12px;
+        }
+    }
     .container {
         padding-top: 24px;
         padding-bottom: 24px;
     }
     .nav-link {
-        .bi-meta,
-        .bi-line,
         .bi-envelope,
         .bi-github {
             color: #cf9e9e;
         }
-        .bi-meta:hover,
-        .bi-line:hover,
         .bi-envelope:hover,
         .bi-github:hover {
             color: #FFBB77;

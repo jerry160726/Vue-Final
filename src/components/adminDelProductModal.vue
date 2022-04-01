@@ -9,7 +9,7 @@
   >
     <div class="modal-dialog">
       <div class="modal-content border-0">
-        <div class="modal-header bg-danger text-white">
+        <div class="modal-header text-white">
           <h5 id="delProductModalLabel" class="modal-title">
             <span>刪除產品</span>
           </h5>
@@ -28,12 +28,16 @@
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-outline-secondary"
+            class="btn btn-outline-secondary cancel_btn"
             data-bs-dismiss="modal"
           >
             取消
           </button>
-          <button type="button" class="btn btn-danger" @click="delProduct">
+          <button
+            type="button"
+            class="btn btn-outline-danger del_btn"
+            @click="delProduct"
+          >
             確認刪除
           </button>
         </div>
@@ -41,6 +45,19 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.modal-header {
+  background-color: red;
+}
+.cancel_btn:hover {
+  color: white;
+}
+.del_btn:hover {
+  background-color: red;
+  color: white;
+}
+</style>
 
 <script>
 import Modal from 'bootstrap/js/dist/modal'

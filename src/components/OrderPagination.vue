@@ -25,6 +25,9 @@
   </nav>
 </template>
 
+<style lang="scss" src="../assets/stylesheets/pagination.scss" scoped>
+</style>
+
 <script>
 export default {
   props: ['pages']

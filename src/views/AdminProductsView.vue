@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-end mt-4">
-      <button class="btn btn-secondary" type="button" @click="openModal('isNew')">
+      <button class="btn btn-outline-secondary" type="button" @click="openModal('isNew')">
         建立新的產品
       </button>
     </div>
@@ -62,7 +62,7 @@
   ></del-product-modal>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/adminproductsview.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/adminproductsview.scss" scoped>
 </style>
 
 <script>
