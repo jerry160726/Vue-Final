@@ -12,14 +12,13 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img :src="product.imageUrl"
-                class="d-block w-100"
-                style="height:450px"/>
+                class="d-block w-100 product_photo"/>
             </div>
-            <div class="carousel-item" v-for="image in product.imagesUrl" :key="image">
+            <div class="carousel-item"
+            v-for="image in product.imagesUrl" :key="image">
               <img
               :src="image"
-                class="d-block w-100"
-                style="height:450px"/>
+                class="d-block w-100 product_photo"/>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -34,8 +33,8 @@
           </button>
         </div>
       </div>
-      <div class="col-md-5">
-        <h2 class="fw-bold h1 mb-1">{{ product.title }}</h2>
+      <div class="col-md-5 product_detail">
+        <h1 class="fw-bold mb-1">{{ product.title }}</h1>
         <div class="priceArea">
           <p class="mb-0 text-muted text-end origin_price"><del>NT${{ product.origin_price }}</del></p>
           <p class="h4 fw-bold text-end price">NT${{ product.price }}</p>
@@ -66,7 +65,7 @@
       </div>
     </div>
     <div class="other_products">
-      <h3 class="fw-bold py-4">你可能感興趣的其他甜點</h3>
+      <h3 class="fw-bold py-4">你可能感興趣的其他甜點:</h3>
       <swiper :slides-per-view="1"
       :space-between="20"
       :breakpoints="{
@@ -107,7 +106,7 @@
   </div>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/productView.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/productView.scss" scoped>
 </style>
 
 <script>

@@ -6,12 +6,8 @@
         經過多年的努力，開發出一道道讓人食指大動，味蕾滿足的甜點系列。
       </p>
       <div class="banner-btn">
-        <!-- <button class="btn btn-outline-danger reservation-btn btn-sm
-        me-2 fs-5 px-3 py-2" type="button">立即訂購</button> -->
-        <!-- <button class="btn btn-outline-secondary intro-btn btn-sm
-        fs-5 px-3 py-2" type="button">甜點目錄</button> -->
         <router-link to="/products"
-        class="btn btn-outline-danger reservation-btn btn-sm me-2 fs-5 px-3 py-2">
+        class="btn btn-outline-danger order-btn btn-sm me-2 fs-5 px-3 py-2">
             立即訂購</router-link>
         <router-link to="/cart"
         class="btn btn-outline-secondary intro-btn btn-sm fs-5 px-3 py-2">
@@ -42,14 +38,14 @@
   <section>
     <div class="choose-case">
       <div class="container my-3">
-        <h3 class="text-dark text-center mb-1 fw-bold">
+        <h2 class="text-dark text-center mb-1 fw-bold">
           商品分類
-        </h3>
+        </h2>
         <p class="text-dark text-center mb-4">
           我們可以帶給您...
         </p>
         <div class="row">
-          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2 mb-5 mb-lg-0">
             <div class="card h-100">
               <div class="card-img-top choco-picture"></div>
               <div class="card-body text-center">
@@ -64,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2 mb-5 mb-lg-0">
             <div class="card h-100">
               <div class="card-img-top cake-picture"></div>
               <div class="card-body text-center">
@@ -79,7 +75,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2">
+          <div class="col-md-12 col-lg-4 mb-2 case-pd-off px-lg-2 mb-5 mb-lg-0">
             <div class="card h-100">
               <div class="card-img-top candy-picture"></div>
               <div class="card-body text-center">
@@ -100,5 +96,5 @@
   </section>
 </template>
 
-<style lang="scss" src="../assets/stylesheets/home.scss" scoped>
+<style lang="scss" src="../assets/stylesheets/pages/home.scss" scoped>
 </style>
